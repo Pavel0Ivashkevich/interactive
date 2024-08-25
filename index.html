@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Клинический случай</title>
+</head>
+<body>
+    <img id="slideImage" src="" alt="фон" class="impression">
+    <div id="content-container" class="content-container">
+        <!-- Контент слайдов будет динамически изменяться здесь -->
+    </div>
+
+    <!-- Модальное окно -->
+    <div id="modal" class="modal hidden">
+        <div class="modal-content">
+            <div id="correct-container" class="correct-answer-container hidden">
+                <h3 class="modal-title correct">Верно!</h3>
+                <div class="modal-description correct"></div>
+            </div>
+            <div id="wrong-container" class="wrong-answer-container hidden">
+                <h3 class="modal-title wrong">Неверно!</h3>
+                <div class="modal-description wrong"></div>
+            </div>
+            <button id="modal-ok-button">Ок</button>
+            <p id="modal-additional-info"></p>
+        </div>
+    </div>
+
+    <script nonce="**CSP_NONCE**" type="text/javascript" src="script.js"></script>
+</body>
+</html>
