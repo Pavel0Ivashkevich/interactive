@@ -55,7 +55,7 @@ function showModal(isCorrect, description, additionalInfo = "", nextSlideIndex) 
 let currentSlideIndex = 0;
 
 function showSlide(index) {
-    console.log('Показ слайда:', index);  // Проверьте, вызывается ли функция
+    console.log('Показ слайда:', index);  
     if (index >= slides.length) {
         console.error('Индекс слайда выходит за пределы массива.');
         return;
@@ -69,9 +69,9 @@ function showSlide(index) {
     contentContainer.innerHTML = slide.content;
 
     // Прокрутка вверх при загрузке нового слайда
-    window.scrollTo({ top: 0, behavior: 'smooth' }); // Обратите внимание на behavior: 'smooth'
+    window.scrollTo({ top: 0, behavior: 'smooth' }); 
 
-    // Удаляем класс .body-question для всех слайдов
+   
     document.body.classList.remove('body-question');
 
     if (slide.type === 'info') {
@@ -94,7 +94,7 @@ function showSlide(index) {
     } else if (slide.type === 'question') {
         displayQuestion(slide.questionData);
 
-        // Добавляем класс .body-question только для слайдов с вопросами
+        //  .body-question только для слайдов с вопросами
         document.body.classList.add('body-question');
     }
 }
@@ -154,9 +154,9 @@ function toggleDetails(element) {
     
     const allItems = document.querySelectorAll('.test-item');
 
-    // Пройдемся по каждому элементу
+    
     allItems.forEach(item => {
-        // Если текущий элемент не совпадает с тем, на который мы кликнули
+        
         if (item !== element.parentNode) {
             
             item.classList.remove('active');
@@ -166,17 +166,17 @@ function toggleDetails(element) {
         }
     });
 
-    // Переключаем класс active на текущем элементе
+
     element.parentNode.classList.toggle('active');
 
-    // Меняем текст кнопки в зависимости от состояния
+   
     const button = element.querySelector('.toggle-button');
     if (element.parentNode.classList.contains('active')) {
         button.textContent = '-';
         button.style.color = 'rgba(237, 27, 36, 1)'; 
     } else {
         button.textContent = '+';
-        button.style.color = 'black'; // Черный цвет при закрытии
+        button.style.color = 'black'; 
     }
 }
 

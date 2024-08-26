@@ -4,8 +4,8 @@
 html, body {
     margin: 0;
     padding: 0;
-    overflow-x: hidden; /* Отключает горизонтальный скролл */
-    overflow-y: auto; /* Обеспечиваем правильную работу вертикальной прокрутки */
+    overflow-x: hidden; 
+    overflow-y: auto; 
     height: 100%;
 
 }
@@ -38,9 +38,9 @@ p {
 }
 
 
-/* Сброс жирности текста для класса normal-text */
+
 .normal-text {
-    font-weight: normal; /* Убираем жирность */
+    font-weight: normal; 
     font-family: 'GilroyLight', sans-serif;
 }
 
@@ -98,23 +98,23 @@ p {
 
 .patient {
     display: flex;
-    gap: 38px; /* Расстояние между элементами */
+    gap: 38px; 
 }
 
-/* Текст под заголовком, но не жирный */
+
 .normal-text {
     padding-top: 5px;
     margin: 0;
      color: rgba(43, 53, 81, 1);
     font-size: 18px;
-    font-weight: normal; /* Убираем жирность */
+    font-weight: normal; 
     font-family: 'GilroyLight', sans-serif;
-    display: block; /* Обеспечивает перенос текста на следующую строку */
+    display: block; 
 }
 
-/* Заголовки и текст */
+
 .patient p {
-    margin: 0; /* Убираем отступы */
+    margin: 0; 
     font-weight: bold;
 }
 
@@ -166,7 +166,7 @@ p {
 #qa-container {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start; /* Выравнивание по началу контейнера */
+    justify-content: flex-start; 
     align-items: flex-start;
     width: 100%;
     padding: 20px;
@@ -434,7 +434,7 @@ font-size: 46px;
    
 }
 
-/* Подсветка ячеек, где значение не входит в норму */
+
 .test-details tbody tr:nth-child(odd) td:nth-child(3):not(.highlight-green),
 .test-details tbody tr:nth-child(even) td:nth-child(3):not(.highlight-green) {
     background-color: rgba(251, 251, 251, 1);
@@ -520,7 +520,7 @@ color: rgba(43, 53, 81, 1);
     justify-content: center;
     align-items: center;
     z-index: 1000;
-    overflow: auto; /* Добавляем прокрутку к модальному окну */
+    overflow: auto; 
 }
 
 /* Контейнер модального окна */
@@ -531,10 +531,10 @@ color: rgba(43, 53, 81, 1);
     text-align: left;
     width: 80%;
     max-width: 1200px;
-    max-height: 90vh; /* Ограничиваем высоту модального окна */
+    max-height: 90vh; 
     position: relative;
     animation: grow 0.3s ease-in-out;
-    overflow-y: auto; /* Прокрутка содержимого внутри модального окна */
+    overflow-y: auto; 
 }
 
 /* Контейнер для заголовка и описания правильного/неправильного ответа */
@@ -654,7 +654,7 @@ button:hover {
    
 
     .impression {
-        width: calc(100% - ((100vw - 1440px) * 0)); /* Плавное масштабирование */
+        width: calc(100% - ((100vw - 1440px) * 0)); 
     }
 
     .container_end {
@@ -683,11 +683,11 @@ button:hover {
     .impression {
        
         /* Устанавливаем ширину фона на 100% */
-            max-width: none; /* Убираем ограничение по максимальной ширине */
+            max-width: none; 
             height: auto;
-            left: 0; /* Устанавливаем его по краям экрана */
-            right: 0; /* Устанавливаем его по краям экрана */
-            z-index: -1; /* Убираем из основного потока, чтобы контент был выше */
+            left: 0; 
+            right: 0; 
+            z-index: -1; 
         }
     
     
@@ -697,16 +697,16 @@ button:hover {
     }
 
     .container {
-        padding: 250px 80px 50px 80px; /* Уменьшение отступов */
+        padding: 250px 80px 50px 80px; 
     }
 
     .title {
-        font-size: 60px; /* Уменьшение размера шрифта */
+        font-size: 60px; 
     }
 
     .introduction {
         font-size: 24px;
-        width: 900px; /* Уменьшение ширины текста */
+        width: 900px; 
     }
 
    
@@ -726,17 +726,17 @@ button:hover {
     }
     .impression {
             
-            width:100%; /* Устанавливаем ширину фона на 100% */
-            max-width: none; /* Убираем ограничение по максимальной ширине */
+            width:100%; 
+            max-width: none; 
             height: auto;
-            left: 0; /* Устанавливаем его по краям экрана */
-            right: 0; /* Устанавливаем его по краям экрана */
-            z-index: -1; /* Убираем из основного потока, чтобы контент был выше */
+            left: 0; 
+            right: 0; 
+            z-index: -1; 
         }
     
 
         .container_end {
-            padding: 20% 5% 5% 10%; /* Используем проценты вместо пикселей */
+            padding: 20% 5% 5% 10%; 
             text-align: left;
         }
         
@@ -756,8 +756,8 @@ button:hover {
         width: 80%;
     }
     .introduction {
-        width: 100%; /* Устанавливаем ширину в 100% от родительского контейнера */
-        max-width: 1080px; /* Но ограничиваем максимальную ширину */
+        width: 100%; 
+        max-width: 1080px; 
         font-size: 2vw;
         padding-top: 43px;
         padding-bottom: 50px;
@@ -840,19 +840,19 @@ button:hover {
             width: 300px;
         }
     .patient {
-        display: block; /* Меняем flex на block для вертикального расположения */
-        gap: 10px; /* Уменьшаем разрыв между элементами */
-        width: 100%; /* Контейнер занимает всю ширину */
+        display: block; 
+        gap: 10px; 
+        width: 100%; 
     }
 
     .normal-text {
-        font-size: 4vw; /* Адаптивный размер шрифта */
+        font-size: 4vw; 
         padding-top: 5px;
         margin: 0;
     }
 
     strong {
-        font-size: 3.5vw; /* Адаптивный размер шрифта для strong */
+        font-size: 3.5vw; 
     }
 }
 
