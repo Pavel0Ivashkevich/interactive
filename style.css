@@ -5,6 +5,9 @@ html, body {
     margin: 0;
     padding: 0;
     overflow-x: hidden; /* Отключает горизонтальный скролл */
+    overflow-y: auto; /* Обеспечиваем правильную работу вертикальной прокрутки */
+    height: 100%;
+
 }
    body {
     font-family: 'GilroyBold', sans-serif;
@@ -18,6 +21,7 @@ html, body {
     width: 100%;
     
 }
+
 .slide-question-answer body {
     justify-content: flex-start; 
 }
@@ -144,6 +148,8 @@ p {
     width: auto;
     z-index: -1;
     top: 0%;
+    overflow: hidden;
+    overflow-y: hidden;
 }
 
 /* ============================
@@ -737,6 +743,7 @@ button:hover {
     .question {
         padding-right: 0px;
         font-size: 2vw;
+        width: 60%;
         
     }
     .qa-container { 
@@ -746,6 +753,7 @@ button:hover {
     .question-container {
         font-size: 2vw;
         margin-left: 0;
+        width: 80%;
     }
     .introduction {
         width: 100%; /* Устанавливаем ширину в 100% от родительского контейнера */
@@ -791,6 +799,9 @@ button:hover {
     .end {
         justify-content: left;
     }
+    #container_end {
+        padding: 70px 153px 70px 17px;
+    }
 }
 @media (min-width: 320px) and (max-width: 700px) {
 
@@ -798,7 +809,7 @@ button:hover {
     width: auto;
 }
 .information p {
-    font-size: 4vw;
+    font-size: 3vw;
     line-height: 1.4;
     margin-bottom: 10px;
 }

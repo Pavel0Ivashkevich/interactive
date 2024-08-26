@@ -24,6 +24,9 @@ function showModal(isCorrect, description, additionalInfo = "", nextSlideIndex) 
         modal.classList.remove('hidden');
         modal.style.display = 'flex';
 
+        // Прокрутка вверх для контента внутри модального окна
+        modal.querySelector('.modal-content').scrollTop = 0;
+
         okButton.onclick = function() {
             modal.style.display = 'none';
             if (nextSlideIndex !== undefined) {
@@ -32,7 +35,6 @@ function showModal(isCorrect, description, additionalInfo = "", nextSlideIndex) 
             }
         };
 
-        // Закрытие модального окна при клике вне его области
         window.onclick = function(event) {
             if (event.target === modal) {
                 modal.style.display = 'none';
@@ -47,10 +49,13 @@ function showModal(isCorrect, description, additionalInfo = "", nextSlideIndex) 
     }
 }
 
+
+
 // Функция для отображения слайда
 let currentSlideIndex = 0;
 
 function showSlide(index) {
+    console.log('Показ слайда:', index);  // Проверьте, вызывается ли функция
     if (index >= slides.length) {
         console.error('Индекс слайда выходит за пределы массива.');
         return;
@@ -62,6 +67,12 @@ function showSlide(index) {
 
     slideImage.src = slide.background;
     contentContainer.innerHTML = slide.content;
+
+    // Прокрутка вверх при загрузке нового слайда
+    window.scrollTo({ top: 0, behavior: 'smooth' }); // Обратите внимание на behavior: 'smooth'
+
+    // Удаляем класс .body-question для всех слайдов
+    document.body.classList.remove('body-question');
 
     if (slide.type === 'info') {
         const nextButton = document.getElementById('nextButton');
@@ -82,8 +93,14 @@ function showSlide(index) {
         }
     } else if (slide.type === 'question') {
         displayQuestion(slide.questionData);
+
+        // Добавляем класс .body-question только для слайдов с вопросами
+        document.body.classList.add('body-question');
     }
 }
+
+
+
 
 function displayQuestion(questionData) {
     const qaContainer = document.getElementById('qa-container');
@@ -162,46 +179,7 @@ function toggleDetails(element) {
         button.style.color = 'black'; // Черный цвет при закрытии
     }
 }
-function showSlide(index) {
-    if (index >= slides.length) {
-        console.error('Индекс слайда выходит за пределы массива.');
-        return;
-    }
 
-    const slide = slides[index];
-    const contentContainer = document.getElementById('content-container');
-    const slideImage = document.getElementById('slideImage');
-
-    slideImage.src = slide.background;
-    contentContainer.innerHTML = slide.content;
-
-    // Удаляем класс .body-question для всех слайдов
-    document.body.classList.remove('body-question');
-
-    if (slide.type === 'info') {
-        const nextButton = document.getElementById('nextButton');
-        const nextButtonChild = document.getElementById('nextButtonChild');
-
-        if (nextButton) {
-            nextButton.addEventListener('click', function() {
-                currentSlideIndex = slide.nextSlide;
-                showSlide(currentSlideIndex);
-            });
-        }
-
-        if (nextButtonChild) {
-            nextButtonChild.addEventListener('click', function() {
-                currentSlideIndex = slide.nextSlide;
-                showSlide(currentSlideIndex);
-            });
-        }
-    } else if (slide.type === 'question') {
-        displayQuestion(slide.questionData);
-
-        // Добавляем класс .body-question только для слайдов с вопросами
-        document.body.classList.add('body-question');
-    }
-}
 // Определение слайдов и вопросов
 const slides = [
     {
@@ -1292,9 +1270,9 @@ const slides = [
                         type: 'info',
                         background: 'images/end.png',
                         content: `
-                            <div class="container_end">
-                            <p class="title">Спасибо за участие</p>
-                            <div class="button-container">
+                            <div class="container_end" id="container_end">
+                            <p class="title" id="title_end">Спасибо за участие</p>
+                            <div class="button-container" id="container_end_btn">
                                 <button id="nextButton">Пройти заново</button>
                             </div>
                         </div>
