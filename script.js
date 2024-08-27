@@ -77,6 +77,7 @@ function showSlide(index) {
     if (slide.type === 'info') {
         const nextButton = document.getElementById('nextButton');
         const nextButtonChild = document.getElementById('nextButtonChild');
+        const endButton = document.getElementById('endButton');
 
         if (nextButton) {
             nextButton.addEventListener('click', function() {
@@ -87,6 +88,12 @@ function showSlide(index) {
 
         if (nextButtonChild) {
             nextButtonChild.addEventListener('click', function() {
+                currentSlideIndex = slide.nextSlide;
+                showSlide(currentSlideIndex);
+            });
+        }
+        if (endButton) {
+            endButton.addEventListener('click', function() {
                 currentSlideIndex = slide.nextSlide;
                 showSlide(currentSlideIndex);
             });
@@ -1273,7 +1280,7 @@ const slides = [
                             <div class="container_end" id="container_end">
                             <p class="title" id="title_end">Спасибо за участие</p>
                             <div class="button-container" id="container_end_btn">
-                                <button id="nextButton">Пройти заново</button>
+                                <button id="endButton">Пройти заново</button>
                             </div>
                         </div>
                         `,
