@@ -648,41 +648,41 @@ button:hover {
 .hidden {
     display: none;
 }
-
-/* Адаптивность */
-@media (min-width: 1440px) and (max-width: 1920px) {
-   
-
-    .impression {
-        width: calc(100% - ((100vw - 1440px) * 0)); 
-    }
-
-    .container_end {
-        padding: calc(260px + (100vw - 1440px) * 0.1) 153px calc(70px + (100vw - 1440px) * 0.1) 17px;
-    }
-}
 @media (min-width: 1920px) {
     .question-container {
         left: 370px;
     }
+
     .impression {
         position: absolute;
         height: auto;
-        width: 1920px;
+        width: 100%;
+        max-width: 1920px; 
         z-index: -1;
         top: 0%;
+        left: 50%;
+        transform: translateX(-50%);
     }
-    .container_end {
-        margin-top: 100px;
-        margin-right: 500px;
+
+    .container_end, .content-container {
+        max-width: 1920px; 
+        margin: 0 auto; 
+       
+    }
+    .question {
+        padding-top: 0%;
+    }
+    .content-container {
+        padding: 50px 153px 70px 157px;
     }
 }
+
 
 @media (min-width: 1024px) and (max-width: 1439px) {
     
     .impression {
        
-        /* Устанавливаем ширину фона на 100% */
+   
             max-width: none; 
             height: auto;
             left: 0; 
