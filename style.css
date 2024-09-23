@@ -142,15 +142,15 @@ p {
 /* ============================
    Слайд 2 - Изображения
    ============================ */
-.impression {
+   .impression {
     position: absolute;
     height: auto;
-    width: auto;
+    width: 100%;
+    /* max-width: 1920px; */
     z-index: -1;
     top: 0%;
-    overflow: hidden;
-    overflow-y: hidden;
-}
+    
+     }
 
 /* ============================
    Слайд 3 - Основные стили
@@ -392,7 +392,7 @@ font-size: 46px;
 }
 
 .test-details td:last-child {
-    background-color: #d4edda; /* Зелёный фон для третьего столбца */
+    background-color: rgba(150, 153, 151, 0.17); /* серый фон для третьего столбца */
 }
 
 .test-item .test-title {
@@ -639,7 +639,22 @@ button {
 button:hover {
     background-color: #b30000;
 }
+footer {
+    top: 130%;
+    position: absolute;
+    left: 18%;
 
+}
+.footer-box {
+display: flex;
+justify-content: space-between;
+color: rgba(0, 0, 0, 0.37);
+}
+.footer-info {
+    text-align: center;
+    color: rgba(0, 0, 0, 0.37);
+    font-size: 2.5vh;
+}
 
 /* ============================
    Адаптивность для всех слайдов
@@ -676,10 +691,25 @@ button:hover {
         padding: 50px 153px 70px 157px;
     }
 }
-
-
+@media (max-width: 1600px) {
+    footer {
+        left: 25%;
+    }
+}
+@media (max-width: 600px) {
+    footer {
+        left: 24%;
+        top: 80%;
+    }
+}
 @media (min-width: 1024px) and (max-width: 1439px) {
     
+    footer {
+        top: 84%;
+        left:5%;
+    }
+
+
     .impression {
        
    
@@ -719,6 +749,13 @@ button:hover {
 @media (min-width: 320px) and (max-width: 1023px) {
     #qa-container { 
         padding-top: 15%;
+    }
+    
+    .footer-info {
+        font-size: 2vh;
+    }
+    .footer-box {
+        font-size: 1vh;
     }
     .test-details th, .test-details td {
     padding: 5px;
