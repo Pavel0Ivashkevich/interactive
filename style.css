@@ -640,15 +640,19 @@ button:hover {
     background-color: #b30000;
 }
 footer {
-    top: 130%;
-    position: absolute;
-    left: 18%;
-
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: left;
 }
 .footer-box {
-display: flex;
-justify-content: space-between;
-color: rgba(0, 0, 0, 0.37);
+    display: flex;
+    justify-content: space-between;
+    color: rgba(0, 0, 0, 0.37);
+    padding: 10px 5%;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 .footer-info {
     text-align: center;
@@ -692,22 +696,16 @@ color: rgba(0, 0, 0, 0.37);
     }
 }
 @media (max-width: 1600px) {
-    footer {
-        left: 25%;
-    }
+    
 }
 @media (max-width: 600px) {
-    footer {
-        left: 24%;
-        top: 80%;
+    .footer-box {
+        text-align: left;
     }
 }
 @media (min-width: 1024px) and (max-width: 1439px) {
     
-    footer {
-        top: 84%;
-        left:5%;
-    }
+    
 
 
     .impression {
